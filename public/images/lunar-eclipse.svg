@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#1B0B4F" rx="24"/>
+
+  <text x="30" y="45" fill="#8BE9FD" font-size="28" font-family="Arial" font-weight="bold">🌕 Lunar Eclipse</text>
+
+  <!-- Sun -->
+  <circle cx="90" cy="200" r="45" fill="#FDB813"/>
+
+  <!-- Sunlight -->
+  <polygon points="135,150 400,185 400,215 135,250" fill="#FFD166" opacity="0.18"/>
+
+  <!-- Earth -->
+  <circle cx="380" cy="200" r="38" fill="#2E86FF"/>
+  <path d="M365 180 C375 170,390 175,395 190 C390 205,375 215,365 205 Z" fill="#34D399"/>
+
+  <!-- Earth's Shadow -->
+  <polygon points="418,170 700,150 700,250 418,230" fill="#111827" opacity="0.45"/>
+
+  <!-- Moon -->
+  <circle cx="670" cy="200" r="20" fill="#E5E7EB"/>
+  <circle cx="662" cy="195" r="3" fill="#C4C4C4"/>
+  <circle cx="676" cy="205" r="2" fill="#C4C4C4"/>
+
+  <text x="40" y="330" fill="white" font-size="18" font-family="Arial">🌍 Earth's shadow falls on the Moon.</text>
+  <text x="40" y="355" fill="#8BE9FD" font-size="16" font-family="Arial">Order: Sun → Earth → Moon</text>
+</svg>

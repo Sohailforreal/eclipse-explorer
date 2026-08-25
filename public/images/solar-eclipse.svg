@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#1B0B4F" rx="24"/>
+
+  <text x="30" y="45" fill="#FFD166" font-size="28" font-family="Arial" font-weight="bold">☀️ Solar Eclipse</text>
+
+  <!-- Sun -->
+  <circle cx="90" cy="200" r="45" fill="#FDB813"/>
+
+  <!-- Sunlight -->
+  <polygon points="995,165 290,185 290,215 135,235" fill="#FFD166" opacity="0.35"/>
+  <polygon points="135,150 470,185 470,215 135,250" fill="#FFD166" opacity="0.18"/>
+
+  <!-- Moon -->
+  <circle cx="290" cy="200" r="20" fill="#D9D9D9"/>
+
+  <!-- Earth -->
+  <circle cx="580" cy="200" r="38" fill="#2E86FF"/>
+  <path d="M565 180 C575 170,590 175,595 190 C590 205,575 215,565 205 Z" fill="#34D399"/>
+
+  <!-- Moon Shadow -->
+  <polygon points="310,185 580,170 580,230 310,215" fill="#111827" opacity="0.45"/>
+
+  <text x="40" y="330" fill="white" font-size="18" font-family="Arial">🌑 The Moon comes between the Sun and Earth.</text>
+  <text x="40" y="355" fill="#FFD166" font-size="16" font-family="Arial">Order: Sun → Moon → Earth</text>
+</svg>

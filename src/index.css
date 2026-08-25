@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #1B1464;
+  color: #FFFDF7;
+}
+
+.font-display { font-family: 'Baloo 2', cursive; }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar { width: 0px; background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@keyframes swipeFinger {
+  0% {
+    left: -10%;
+    opacity: 0;
+    transform: translateY(-15%) rotate(-12deg) scale(0.9);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-15%) rotate(-12deg) scale(1);
+  }
+  50% {
+    left: 78%;
+    transform: translateY(-15%) rotate(-12deg) scale(1.05);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 78%;
+    opacity: 0;
+    transform: translateY(-15%) rotate(-12deg) scale(0.9);
+  }
+}
+
+.swipe-finger {
+  animation: swipeFinger 2.2s ease-in-out infinite;
+}
+
