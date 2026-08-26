@@ -109,8 +109,8 @@ export default function WhatIsEclipse() {
         <img
           src={
             mode === "solar"
-              ? "/images/solar-eclipse.svg"
-              : "/images/lunar-eclipse.svg"
+              ? "/images/solar-eclipse.png"
+              : "/images/lunar-eclipse.png"
           }
           alt={mode === "solar" ? "Solar Eclipse" : "Lunar Eclipse"}
           className="w-full rounded-2xl"

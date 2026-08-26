@@ -16,8 +16,8 @@ const BODIES = {
     label: "Sun",
     emoji: "☀️",
     facts: [
-      "The Sun is a star. It is the biggest object in our solar system",
-      "The Sun affects Earth’s weather, seasons, climate, and more.",
+      "The Sun is a star. It is the biggest object in our solar system.",
+      "The Sun affects Earth's weather, seasons, climate, and more.",
     ],
     astro: "The Sun is our star — it gives us light and warmth!",
   },
@@ -43,14 +43,23 @@ const BODIES = {
 
 export default function MeetThePlanets() {
   const [active, setActive] = useState("sun");
+  const [showFinger, setShowFinger] = useState(true);
+
   const { setAstro } = useAstro();
   const { setScene, setCamera } = useScene();
   const slotRef = useSceneSlot();
+
   const body = BODIES[active];
 
   useEffect(() => {
     setAstro({ mood: "happy", message: body.astro });
   }, [active, body, setAstro]);
+
+  // Finger tutorial disappears after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setShowFinger(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     setCamera({ position: [0, 0, 4.5], fov: 40 });
@@ -72,6 +81,7 @@ export default function MeetThePlanets() {
           enablePan={false}
           autoRotate
           autoRotateSpeed={0.8}
+          onStart={() => setShowFinger(false)}
         />
       </Suspense>
     );
@@ -97,13 +107,27 @@ export default function MeetThePlanets() {
         ))}
       </div>
 
-      <div
-        className="relative w-full max-w-md h-80 sm:h-96 rounded-3xl overflow-hidden bg-gradient-to-b from-slate-950 via-black to-slate-900 shadow-[0_0_60px_rgba(255,255,255,0.15)]"
-      >
+      {/* 3D Canvas */}
+      <div className="relative w-full max-w-md h-80 sm:h-96 rounded-3xl overflow-hidden bg-gradient-to-b from-slate-950 via-black to-slate-900 shadow-[0_0_60px_rgba(255,255,255,0.15)]">
         <div ref={slotRef} className="absolute inset-0 touch-none" />
         <CanvasSkeleton />
+
+        {/* Swipe / Rotate Finger Tutorial */}
+        {showFinger && (
+          <img
+            src="/images/astronaut-finger.png"
+            alt="Rotate tutorial"
+            className="swipe-finger absolute w-16 pointer-events-none z-20"
+            style={{
+              top: "68%",
+              left: "12%",
+              "--finger-x": "120px",
+            }}
+          />
+        )}
       </div>
 
+      {/* Facts */}
       <GlassCard className="w-full max-w-md mt-5 p-4">
         <AnimatePresence mode="wait">
           <motion.ul
