@@ -15,12 +15,21 @@ const FACES = {
       <ellipse cx="80" cy="93" rx="10" ry="8" fill="#16213E" />
     </>
   ),
+
+
+
+
+
+
+  
   thinking: (
-    <>
-      <circle cx="68" cy="76" r="4" fill="#16213E" />
-      <path d="M86 72 Q96 72 96 77" stroke="#16213E" strokeWidth="4" fill="none" strokeLinecap="round" />
-      <path d="M68 93 Q80 88 92 93" stroke="#16213E" strokeWidth="4" fill="none" strokeLinecap="round" />
+  <>
+      <circle cx="68" cy="76" r="4.5" fill="#16213E" />
+      <circle cx="92" cy="76" r="4.5" fill="#16213E" />
+        <path d="M66 90 Q 80 85 94 100" fill="none" stroke="#16213E" strokeWidth="4" strokeLinecap="round" />
+     
     </>
+
   ),
   cheer: (
     <>

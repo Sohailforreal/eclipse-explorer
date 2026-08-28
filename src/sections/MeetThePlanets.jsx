@@ -34,8 +34,9 @@ const BODIES = {
     label: "Moon",
     emoji: "🌙",
     facts: [
-      "I orbit around Earth every month.",
-      "The Moon does not shine with its own light. It simply reflects light coming from the Sun.",
+      
+      "Moon orbit around Earth every month.",
+      "It does not shine with its own light. It simply reflects light coming from the Sun.",
     ],
     astro: "The Moon is Earth's best friend, always following it around!",
   },
@@ -91,7 +92,7 @@ export default function MeetThePlanets() {
 
   return (
     <div className="h-full w-full flex flex-col items-center pt-20 pb-48 px-4 overflow-y-auto">
-      <SectionTitle sub="Tap each one, then drag to spin it around!">
+      <SectionTitle sub="Tap any Celestial Body to explore it, then drag your finger to spin it around in 3D!">
         Meet the Trio
       </SectionTitle>
 

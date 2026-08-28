@@ -126,7 +126,7 @@ export function Moon(props) {
   );
 }
 
-export function TwinkleStars() {
+export function TwinkleStars({count = 180, radius = 12}) {
   const stars = useLoader(TextureLoader, "/textures/3.jpg");
 
   return (

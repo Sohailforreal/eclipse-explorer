@@ -14,7 +14,7 @@ import Orbits from "./sections/Orbits";
 import WhatIsEclipse from "./sections/WhatIsEclipse";
 import SolarSimulator from "./sections/SolarSimulator";
 import LunarSimulator from "./sections/LunarSimulator";
-import Safety from "./sections/Safety";
+import SafetyFirst from "./sections/SafetyFirst";
 import Story from "./sections/Story";
 import Quiz from "./sections/Quiz";
 import { Suspense } from "react";
@@ -41,7 +41,7 @@ const SECTIONS = [
   SolarSimulator,
   LunarSimulator,
   
-  Safety,
+  SafetyFirst,
   Story,
   Quiz,
 ];

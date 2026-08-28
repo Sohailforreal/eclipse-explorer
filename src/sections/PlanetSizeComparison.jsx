@@ -7,6 +7,8 @@ import { useImagePreload } from "../hooks/useImagePreload";
 const SUN_REAL_SRC = "/images/sun_real.jpeg";
 const SUN_EARTHS_SRC = "/images/sun_earths.jpeg";
 
+const TOTAL_EARTHS = 1300000;
+
 export default function PlanetSizeComparison() {
   const { setAstro } = useAstro();
 
@@ -21,6 +23,10 @@ export default function PlanetSizeComparison() {
   const handleReveal = useCallback((value) => {
     setReveal(value);
   }, []);
+
+  // Live Earth counter
+  const earthCount = Math.round((reveal / 100) * TOTAL_EARTHS);
+  const formattedCount = new Intl.NumberFormat("en-IN").format(earthCount);
 
   useEffect(() => {
     setAstro({
@@ -46,6 +52,7 @@ export default function PlanetSizeComparison() {
         How Big is the Sun?
       </SectionTitle>
 
+      {/* Image Reveal Card */}
       <GlassCard className="w-full max-w-sm p-4">
         <div className="relative w-72 h-72 mx-auto rounded-full overflow-hidden">
           {!imagesLoaded && (
@@ -61,10 +68,7 @@ export default function PlanetSizeComparison() {
             loading="eager"
             decoding="async"
             className="absolute top-0 left-0 w-72 h-72 object-cover select-none pointer-events-none"
-            style={{
-              opacity: imagesLoaded ? 1 : 0,
-              transform: "translateZ(0)",
-            }}
+            style={{ opacity: imagesLoaded ? 1 : 0 }}
           />
 
           <img
@@ -73,7 +77,7 @@ export default function PlanetSizeComparison() {
             draggable={false}
             loading="eager"
             decoding="async"
-            className="absolute top-0 left-0 w-72 h-72 object-cover select-none pointer-events-none will-change-[clip-path]"
+            className="absolute top-0 left-0 w-72 h-72 object-cover select-none pointer-events-none"
             style={{
               clipPath: `inset(0 ${100 - reveal}% 0 0)`,
               opacity: imagesLoaded ? 1 : 0,
@@ -106,6 +110,35 @@ export default function PlanetSizeComparison() {
         </div>
       </GlassCard>
 
+      {/* Live Earth Counter */}
+      <GlassCard className="w-full max-w-sm mt-5 p-5">
+        <div className="text-center">
+          <p className="text-white/70 text-sm mb-2">
+            🌍 Earths that could fit inside the Sun
+          </p>
+
+          <h2 className="text-4xl font-extrabold text-yellow-300">
+            {formattedCount}
+          </h2>
+
+          <div className="mt-4 h-2 w-full rounded-full bg-white/10 overflow-hidden">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-blue-400 via-yellow-300 to-orange-400 transition-all duration-300"
+              style={{ width: `${reveal}%` }}
+            />
+          </div>
+
+          <p className="text-white/60 text-xs mt-3 leading-5">
+            At 100%, about{" "}
+            <span className="text-yellow-300 font-semibold">
+              13,00,000 Earths
+            </span>{" "}
+            could fit inside the Sun.
+          </p>
+        </div>
+      </GlassCard>
+
+      {/* Fact Popup */}
       <AnimatePresence>
         {showFact && (
           <motion.div
@@ -129,11 +162,11 @@ export default function PlanetSizeComparison() {
               </h3>
 
               <p className="text-white/90 text-sm leading-6">
-                NASA says it would take about{" "}
+                NASA estimates that about{" "}
                 <span className="text-yellow-300 font-bold">
                   1.3 million Earth-sized planets
                 </span>{" "}
-                to fill up the inside of the Sun!
+                could fit inside the Sun.
               </p>
 
               <button
