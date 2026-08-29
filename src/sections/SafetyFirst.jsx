@@ -8,7 +8,7 @@ const SAFETY_CARDS = [
   {
     id: 1,
     title: "Wear Eclipse Glasses",
-    icon: "/images/safety-glasses.png",
+    icon: "/images/eclipse-glasses-hero.png",
     color: "border-yellow-400/40 bg-yellow-400/10",
     text: "Use certified solar eclipse glasses. Sunglasses are NOT safe.",
   },
@@ -148,7 +148,7 @@ export default function SafetyFirst() {
       {/* Swipeable Safety Card Slider */}
       <SafetyCardSlider />
 
-      <PinholeViewerActivity />
+      {    /*  <PinholeViewerActivity />*/}
       
       {/* Mini Safety Checklist */}
       <GlassCard className="w-full max-w-md mt-6 p-5">

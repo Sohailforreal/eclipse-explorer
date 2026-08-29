@@ -9,10 +9,26 @@ import { GlassCard } from "../components/ui";
 const PinholeViewerModel = lazy(() => import("../three/PinholeViewerModel"));
 
 const STEPS = [
-  { title: "Grab a Box", text: "Find an empty cereal box or a long envelope." },
-  { title: "Cut a Window", text: "Cut a small square window near one end." },
-  { title: "Poke a Pinhole", text: "Cover the other end with foil and poke one tiny hole." },
-  { title: "Look Away & Watch!", text: "Stand with your back to the Sun and peek through the window." },
+  {
+    title: "Step 1 • Open the Box",
+    text: "Take a long cardboard or shoe box and open the top flap."
+  },
+  {
+    title: "Step 2 • Paste White Paper",
+    text: "Tape a white sheet of paper inside the back wall of the box. This is the screen where the eclipse will appear."
+  },
+  {
+    title: "Step 3 • Make the Pinhole",
+    text: "Cover the front opening with aluminum foil and poke one tiny pinhole in the center."
+  },
+  {
+    title: "Step 4 • Cut the View Port",
+    text: "Cut a small viewing window on the side of the box so you can look inside."
+  },
+  {
+    title: "Step 5 • Watch the Eclipse Safely",
+    text: "Stand with your back to the Sun. Sunlight enters through the pinhole and projects the eclipse onto the white paper."
+  }
 ];
 
 // Only mounts the 3D canvas once this section actually scrolls into view —
